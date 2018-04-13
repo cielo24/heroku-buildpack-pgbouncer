@@ -22,8 +22,8 @@ run-pgbouncer() {
   mkfifo "$psmgr"
 
   # Start processes.
-  aux-start stunnel SIGINT vendor/stunnel/bin/stunnel vendor/stunnel/stunnel-pgbouncer.conf
-  aux-start pgbouncer SIGINT vendor/pgbouncer/bin/pgbouncer vendor/pgbouncer/pgbouncer.ini
+  aux-start stunnel SIGINT /app/vendor/stunnel/bin/stunnel /app/vendor/stunnel/stunnel-pgbouncer.conf
+  aux-start pgbouncer SIGINT /app/vendor/pgbouncer/bin/pgbouncer /app/vendor/pgbouncer/pgbouncer.ini
   app-start SIGTERM "$@"
   pid=$!
 
